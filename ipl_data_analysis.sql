@@ -72,9 +72,6 @@ select bowler,count(wicket_type) as wicket from ipl_ana group by bowler order by
 select bowler,count(wicket_type) as wicket,season from ipl_ana group by bowler,season order by season desc;
 
 -- most no balls by ipl teams
-select bowling_team ,sum(noballs) as total_noballs from ipl_ana group by bowling_team order by total_noballs desc ;
-
-
 SELECT 
     bowling_team,
     COUNT(*) AS total_no_balls

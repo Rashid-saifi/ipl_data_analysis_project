@@ -1,6 +1,7 @@
 create database ipl;
 use ipl;
 
+-- select all data from database to analyse the data
 select * from ipl_ana;
 -- most ipl matches played in a venue 
 select count(distinct(match_id)) as Total_matches,venue from ipl_ana group by venue order by Total_matches desc  ;

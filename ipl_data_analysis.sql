@@ -1,18 +1,13 @@
 create database ipl;
 use ipl;
 
-
 select * from ipl_ana;
-select venue, count(match_id) Total_matches from  ipl_ana group by venue,match_id;
-with myy as (
-select count(match_id) as Total_matches,venue from ipl_ana group by venue)
+-- most ipl matches played in a venue 
+select count(distinct(match_id)) as Total_matches,venue from ipl_ana group by venue order by Total_matches desc  ;
 
-
-select count(match_id),venue from ipl_ana group by venue order by count(match_id)  desc;
 --  most ipl runs by ipl teams
 select batting_team,sum(run) from ipl_ana group by batting_team;
 -- alter table ipl_ana change column over to overr
-
 
 
 -- Average runs in power_play by each ipl team 

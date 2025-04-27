@@ -62,10 +62,38 @@ select bowler,count(run) as dot_ball from ipl_ana where run=0 group by bowler ;
 select bowling_team ,count(wicket_type) as wicket from ipl_ana group by bowling_team;
 
 -- most wickets by a bowler
-select bowler,count(wicket_type) as wicket from ipl_ana group by bowler order by wicket desc;
+SELECT 
+    Bowler, COUNT(*) AS Wicket
+FROM
+    ipl_ana
+WHERE
+    wicket_type IN ('caught' , 'bowled',
+        'runout',
+        'lbw',
+        'retired hurt',
+        'stumped',
+        'caught and bowled',
+        'hit wicket',
+        'obstructing the field')
+GROUP BY bowler
+ORDER BY wicket DESC;
 
 -- most wicket by a bowler in season
-select bowler,count(wicket_type) as wicket,season from ipl_ana group by bowler,season order by season desc;
+SELECT 
+    Bowler,season,COUNT(*) AS Wicket
+FROM
+    ipl_ana
+WHERE
+    wicket_type IN ('caught' , 'bowled',
+        'runout',
+        'lbw',
+        'retired hurt',
+        'stumped',
+        'caught and bowled',
+        'hit wicket',
+        'obstructing the field')
+GROUP BY bowler,season
+ORDER BY wicket DESC;
 
 -- most no balls by ipl teams
 SELECT 

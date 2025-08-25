@@ -1,4 +1,4 @@
-📊 Technologies Used
+
 #ipl_data_analysis_project  
 🔍 Project Title: IPL Data Analysis using MySQL
 🛠 Tools Used: MySQL, IPL Dataset (from Kaggle or similar)
